@@ -16,11 +16,23 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
   // Getting authors from the search query
   const authorsFromUrl = searchParams.getAll("author")
   const genre = searchParams.get("genre")
+  const searchText = searchParams.get("search")
 
   useEffect(() => {
     // No filtering
     if (category === "All Genre") {
       setResultsBasedOnFilter(bookData)
+    }
+
+    // Filter based on search
+    if (searchText != null) {
+      if (searchText === "") {
+        return
+      }
+      const resultsBasedOnSearchText = bookData.filter((book) =>
+        book.title.toLowerCase().includes(searchText)
+      )
+      setResultsBasedOnFilter(resultsBasedOnSearchText)
     }
 
     // Filter based on category
@@ -48,7 +60,9 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
       }
       setResultsBasedOnFilter(resultsBasedOnAuthors)
     }
-  }, [genre, authorsFromUrl.length])
+
+    // Filter based on publication date
+  }, [searchText, genre, authorsFromUrl.length])
 
   // To render category at the top of the page when switching to categories
   const formattedCategory = category.replaceAll("-", " ")
@@ -71,6 +85,11 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
   return (
     <div className="p-4 bg-white">
       <h1 className="text-xl md:text-2xl font-medium">{finalCategory}</h1>
+      {resultsBasedOnFilter.length < 1 && (
+        <div>
+          <p className="mt-4 text-md text-gray-500">No results found!</p>
+        </div>
+      )}
       <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 mt-4">
         {currentItems.map((book) => {
           return (

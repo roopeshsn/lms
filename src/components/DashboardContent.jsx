@@ -1,5 +1,6 @@
 import React from "react"
 import { Container } from "./Container"
+import { Footer } from "./Footer"
 import { MobileMultiMenu } from "./MobileMultiMenu"
 import { Sidebar } from "./Sidebar"
 
@@ -11,6 +12,7 @@ export const DashboardContent = ({ children }) => {
         <Sidebar />
         {children}
       </div>
+      <Footer />
     </Container>
   )
 }

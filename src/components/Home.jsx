@@ -44,21 +44,25 @@ export const Home = () => {
         <h1 className="text-3xl md:text-4xl font-medium">Explore by Genre</h1>
         <div className="grid grid-cols-1 grid-flow-row md:grid-cols-2 gap-4 my-8">
           <div className="bg-amber-200 text-2xl font-medium p-4">
-            <Link to={`/books/personal-development`}>Personal Development</Link>
+            <Link to={`/books?genre=personal-development`}>
+              Personal Development
+            </Link>
           </div>
           <div className="bg-amber-200 text-2xl font-medium p-4">
-            <Link to={`/books/personal-development`}>
+            <Link to={`/books?genre=business-and-economics`}>
               Business and Economics
             </Link>
           </div>
           <div className="bg-amber-200 text-2xl font-medium p-4">
-            <Link to={`/books/action-and-adventure`}>Action and Adventure</Link>
+            <Link to={`/books?genre=action-and-adventure`}>
+              Action and Adventure
+            </Link>
           </div>
           <div className="bg-amber-200 text-2xl font-medium p-4">
-            <Link to={`/books/fiction`}>Fiction</Link>
+            <Link to={`/books?genre=fiction`}>Fiction</Link>
           </div>
           <div className="bg-amber-200 text-2xl font-medium p-4">
-            <Link to={`/books/religion-and-sprituality`}>
+            <Link to={`/books?genre=religion-and-sprituality`}>
               Religion and Sprituality
             </Link>
           </div>
