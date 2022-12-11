@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Checkbox } from "./Checkbox"
 import { bookData } from "../books"
+import { categories } from "../categories"
 import { IndividualCategory } from "./IndividualCategory"
 import { useSearchParams } from "react-router-dom"
 
@@ -10,6 +11,9 @@ export const Sidebar = () => {
   const [checkedThree, setCheckedThree] = useState(false)
   const [filteredDataByAuthor, setFilteredDataByAuthor] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
+  const [date, setDate] = useState(null)
+
+  const author = searchParams.get("author")
 
   const handleChangeOne = () => {
     setCheckedOne(!checkedOne)
@@ -42,25 +46,25 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className="bg-slate-200 invisible md:visible">
+    <div className="bg-white min-h-screen hidden md:block p-4">
       <h1 className="text-2xl font-medium">Filter</h1>
-      <div>
+      <div className="mt-4">
         <h2 className="text-xl font-medium">By Category</h2>
-        <div>
-          {bookData.map((book) => {
+        <div className="mt-2">
+          {categories.map((category) => {
             return (
               <IndividualCategory
-                id={book.id}
-                category={book.category}
-                to={book.to}
+                id={category.id}
+                category={category.category}
+                to={category.to}
               />
             )
           })}
         </div>
       </div>
-      <div>
+      <div className="mt-4">
         <h2 className="text-xl font-medium">By Author</h2>
-        <div>
+        <div className="mt-2">
           <Checkbox
             id={1}
             label="Ankur Warikoo"
@@ -81,8 +85,11 @@ export const Sidebar = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="mt-4">
         <h2 className="text-xl font-medium">By Date</h2>
+        <div className="mt-2">
+          <input type="date" onChange={(e) => setDate(e.target.value)} />
+        </div>
       </div>
     </div>
   )

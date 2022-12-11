@@ -22,7 +22,7 @@ export const FilterByCategory = () => {
 
   return (
     <DashboardContent>
-      <BooksContainer books={filteredDataByCategory} />
+      <BooksContainer category={category} books={filteredDataByCategory} />
     </DashboardContent>
   )
 }
