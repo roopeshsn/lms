@@ -3,23 +3,31 @@ import { useSearchParams } from "react-router-dom"
 import { Book } from "./Book"
 import { bookData } from "../books"
 import { useEffect } from "react"
+import { Pagination } from "./Pagination"
 
 export const BooksContainer = ({ category = "All Genre", books }) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const [resultsBasedOnFilter, setResultsBasedOnFilter] = useState([])
-  // const [authors, setAuthors] = useState([])
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage] = useState(10)
+
+  // Getting authors from the search query
   const authorsFromUrl = searchParams.getAll("author")
-  // console.log(authorsFromUrl)
   const genre = searchParams.get("genre")
+
   useEffect(() => {
     // No filtering
-    if (category == "All Genre") {
+    if (category === "All Genre") {
       setResultsBasedOnFilter(bookData)
     }
 
     // Filter based on category
     if (genre != null) {
-      const resultsBasedOnCategory = bookData.filter((book) => book.to == genre)
+      const resultsBasedOnCategory = bookData.filter(
+        (book) => book.to === genre
+      )
       setResultsBasedOnFilter(resultsBasedOnCategory)
     }
 
@@ -33,7 +41,7 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
       const resultsBasedOnAuthors = []
       for (let i = 0; i < formattedAuthors.length; i++) {
         for (let j = 0; j < bookData.length; j++) {
-          if (formattedAuthors[i] == bookData[j].author) {
+          if (formattedAuthors[i] === bookData[j].author) {
             resultsBasedOnAuthors.push(bookData[j])
           }
         }
@@ -48,11 +56,23 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
     /(^\w{1})|(\s+\w{1})/g,
     (letter) => letter.toUpperCase()
   )
+
+  // Get current posts
+  const indexOfLastItem = currentPage * itemsPerPage
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+  const currentItems = resultsBasedOnFilter.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  )
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   return (
     <div className="p-4 bg-white">
       <h1 className="text-xl md:text-2xl font-medium">{finalCategory}</h1>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 mt-4">
-        {resultsBasedOnFilter.map((book) => {
+        {currentItems.map((book) => {
           return (
             <Book
               id={book.id}
@@ -64,6 +84,11 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
           )
         })}
       </div>
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={resultsBasedOnFilter.length}
+        paginate={paginate}
+      />
     </div>
   )
 }
