@@ -4,6 +4,7 @@ import { bookData } from "../books"
 import { categories } from "../categories"
 import { IndividualCategory } from "./IndividualCategory"
 import { useSearchParams } from "react-router-dom"
+import { useEffect } from "react"
 
 export const Sidebar = () => {
   const [checkedOne, setCheckedOne] = useState(false)
@@ -12,15 +13,21 @@ export const Sidebar = () => {
   const [filteredDataByAuthor, setFilteredDataByAuthor] = useState([])
   const [searchParams, setSearchParams] = useSearchParams()
   const [date, setDate] = useState(null)
+  const [authors, setAuthors] = useState([])
 
-  const author = searchParams.get("author")
+  const authorsFromUrl = searchParams.getAll("author")
+  useEffect(() => {
+    setAuthors(authorsFromUrl)
+  }, [checkedOne, checkedTwo])
 
   const handleChangeOne = () => {
     setCheckedOne(!checkedOne)
     if (checkedOne) {
-      setSearchParams({})
+      setSearchParams({ author: [] })
     } else {
-      setSearchParams({ author: "ankur-warikoo" })
+      setSearchParams({
+        author: [...searchParams.getAll("author"), "ankur-warikoo"],
+      })
     }
     // const filtered = bookData.filter((book) => book.author == "Ankur Warikoo")
     // setFilteredDataByAuthor([...filteredDataByAuthor, ...filtered])
@@ -31,9 +38,13 @@ export const Sidebar = () => {
   const handleChangeTwo = () => {
     setCheckedTwo(!checkedTwo)
     if (checkedTwo) {
-      setSearchParams({})
+      setSearchParams({
+        author: [...searchParams.getAll("author")],
+      })
     } else {
-      setSearchParams({ author: "robin-sharma" })
+      setSearchParams({
+        author: [...searchParams.getAll("author"), "robin-sharma"],
+      })
     }
     // const filtered = bookData.filter((book) => book.author == "Robin Sharma")
     // setFilteredDataByAuthor([...filteredDataByAuthor, ...filtered])
@@ -43,6 +54,13 @@ export const Sidebar = () => {
 
   const handleChangeThree = () => {
     setCheckedThree(!checkedThree)
+  }
+
+  const handleDate = (e) => {
+    // setDate(e.target.value)
+    setSearchParams({
+      date: e.target.value,
+    })
   }
 
   return (
@@ -88,7 +106,7 @@ export const Sidebar = () => {
       <div className="mt-4">
         <h2 className="text-xl font-medium">By Date</h2>
         <div className="mt-2">
-          <input type="date" onChange={(e) => setDate(e.target.value)} />
+          <input type="date" onChange={handleDate} />
         </div>
       </div>
     </div>

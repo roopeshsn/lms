@@ -5,8 +5,8 @@ export const IndividualCategory = ({ id, category, to }) => {
   return (
     <div key={id}>
       <NavLink
-        to={`/books/${to}`}
-        className={({ isActive }) => (isActive ? `font-medium` : undefined)}
+        to={`/books?genre=${to}`}
+        className={({ isActive }) => (isActive ? `font-normal` : undefined)}
       >
         {category}
       </NavLink>
