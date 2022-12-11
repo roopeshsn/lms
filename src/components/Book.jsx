@@ -2,7 +2,10 @@ import React from "react"
 
 export const Book = ({ id, title, category, author, src }) => {
   return (
-    <div className="flex flex-row gap-4" key={id}>
+    <div
+      className="flex flex-row gap-4 hover:shadow-xl transition-shadow"
+      key={id}
+    >
       <div className="mb-2">
         <div className="w-40 h-50">
           <img src={src} alt={title} />

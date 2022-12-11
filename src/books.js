@@ -1,11 +1,12 @@
 export const bookData = [
   {
     id: 1,
-    title: "The Monk Sold His Ferrari",
-    author: "Robin Sharma",
-    category: "Personal Development",
-    to: "personal-development",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    title: "It Starts With Us",
+    author: "Colleen Hoover",
+    category: "Fiction",
+    to: "fiction",
+    date: "2022-10-18",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772292/lms/books/it-starts-with-us_q3eiqo.webp",
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const bookData = [
     author: "Robin Sharma",
     category: "Business and Economics",
     to: "business-and-economics",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-10-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772292/lms/books/the-5-am-club_lcih4t.webp",
   },
   {
     id: 3,
@@ -21,7 +23,8 @@ export const bookData = [
     author: "Ankur Warikoo",
     category: "Personal Development",
     to: "personal-development",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-10-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670771744/lms/books/do-epic-shit_xreqwc.webp",
   },
   {
     id: 4,
@@ -29,7 +32,8 @@ export const bookData = [
     author: "Paulo Coelho",
     category: "Fiction",
     to: "fiction",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-09-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772292/lms/books/the-alchemist_pnubzg.webp",
   },
   {
     id: 5,
@@ -37,7 +41,8 @@ export const bookData = [
     author: "J.K. Rowling",
     category: "Action and Adventure",
     to: "action-and-adventure",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-09-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772617/lms/books/harry-potter-and-the-philosopher-s-stone_tvis4v.webp",
   },
   {
     id: 6,
@@ -45,7 +50,8 @@ export const bookData = [
     author: "Joseph Murphy",
     category: "Religion and Sprituality",
     to: "religion-and-sprituality",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-08-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772616/lms/books/the-power-of-your-subconscious-mind_yjtn4m.webp",
   },
   {
     id: 7,
@@ -53,7 +59,8 @@ export const bookData = [
     author: "Robin Sharma",
     category: "Religion and Sprituality",
     to: "religion-and-sprituality",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-08-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772617/lms/books/the-monk-who-sold-his-ferrari_xgk2ly.webp",
   },
   {
     id: 8,
@@ -61,7 +68,8 @@ export const bookData = [
     author: "James Clear",
     category: "Personal Development",
     to: "personal-development",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-07-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772616/lms/books/atomic-habits_sg87kh.webp",
   },
   {
     id: 9,
@@ -69,7 +77,8 @@ export const bookData = [
     author: "Michelle Obama",
     category: "Biographies",
     to: "biographies",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-07-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670772770/lms/books/becoming_grshvz.webp",
   },
   {
     id: 10,
@@ -77,7 +86,8 @@ export const bookData = [
     author: "Morgan Housel",
     category: "Business and Economics",
     to: "business-and-economics",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-06-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775269/lms/books/the-psychology-of-money_ykn9fq.webp",
   },
   {
     id: 11,
@@ -85,7 +95,8 @@ export const bookData = [
     author: "Robert T. Kiyosaki ",
     category: "Business and Economics",
     to: "business-and-economics",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-06-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775103/lms/books/rich-dad-poor-dad_kvbuj1.webp",
   },
   {
     id: 12,
@@ -93,7 +104,8 @@ export const bookData = [
     author: "Yuval Noah Harari",
     category: "History",
     to: "history",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-05-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775103/lms/books/sapiens-a-brief-history-of-humankind_esikei.webp",
   },
   {
     id: 13,
@@ -101,7 +113,8 @@ export const bookData = [
     author: "Ankur Warikoo",
     category: "Personal Development",
     to: "personal-development",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-05-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775103/lms/books/get-epic-shit-done_feqlxl.webp",
   },
   {
     id: 14,
@@ -109,6 +122,7 @@ export const bookData = [
     author: "Karan Bajaj",
     category: "Personal Development",
     to: "personal-development",
+    date: "2022-04-12",
     src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
   },
   {
@@ -117,6 +131,7 @@ export const bookData = [
     author: "Karan Bajaj",
     category: "Religion and Sprituality",
     to: "religion-and-sprituality",
-    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670662682/lms/books/the_freedom_manifesto_zyyz46.jpg",
+    date: "2022-03-12",
+    src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775103/lms/books/the-seeker_tyemsg.webp",
   },
 ]

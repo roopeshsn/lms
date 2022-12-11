@@ -17,6 +17,7 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
   const authorsFromUrl = searchParams.getAll("author")
   const genre = searchParams.get("genre")
   const searchText = searchParams.get("search")
+  const date = searchParams.get("date")
 
   useEffect(() => {
     // No filtering
@@ -62,7 +63,11 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
     }
 
     // Filter based on publication date
-  }, [searchText, genre, authorsFromUrl.length])
+    if (date != null) {
+      const resultsBasedOnDate = bookData.filter((book) => book.date === date)
+      setResultsBasedOnFilter(resultsBasedOnDate)
+    }
+  }, [searchText, genre, authorsFromUrl.length, date])
 
   // To render category at the top of the page when switching to categories
   const formattedCategory = category.replaceAll("-", " ")

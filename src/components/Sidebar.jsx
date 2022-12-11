@@ -42,9 +42,7 @@ export const Sidebar = () => {
   const handleChangeTwo = () => {
     setCheckedTwo(!checkedTwo)
     if (checkedTwo) {
-      setSearchParams({
-        author: [...searchParams.getAll("author")],
-      })
+      setSearchParams({ author: [] })
     } else {
       setSearchParams({
         author: [...searchParams.getAll("author"), "robin-sharma"],
@@ -54,6 +52,13 @@ export const Sidebar = () => {
 
   const handleChangeThree = () => {
     setCheckedThree(!checkedThree)
+    if (checkedThree) {
+      setSearchParams({ author: [] })
+    } else {
+      setSearchParams({
+        author: [...searchParams.getAll("author"), "james-clear"],
+      })
+    }
   }
 
   const handleDate = (e) => {
@@ -64,7 +69,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <div className="bg-white min-h-screen hidden md:block p-4">
+    <div className="bg-white min-h-screen hidden md:block p-4 border-r-2 border-solid border-gray-300">
       <h1 className="text-2xl font-medium">
         <Link to={"/books"}>Filter</Link>
       </h1>
@@ -144,7 +149,11 @@ export const Sidebar = () => {
       <div className="mt-4">
         <h2 className="text-xl font-medium">By Date</h2>
         <div className="mt-2">
-          <input type="date" onChange={handleDate} />
+          <input
+            className="text-sm text-gray-900"
+            type="date"
+            onChange={handleDate}
+          />
         </div>
       </div>
     </div>
