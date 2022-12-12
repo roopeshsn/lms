@@ -28,6 +28,7 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
     // Filter based on search
     if (searchText != null) {
       if (searchText === "") {
+        setSearchParams({})
         return
       }
       const resultsBasedOnSearchText = bookData.filter((book) =>
@@ -89,13 +90,15 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
 
   return (
     <div className="p-4 bg-white">
-      <h1 className="text-xl md:text-2xl font-medium">{finalCategory}</h1>
+      <h1 className="text-xl md:text-2xl font-medium">
+        {finalCategory} - {resultsBasedOnFilter.length}
+      </h1>
       {resultsBasedOnFilter.length < 1 && (
         <div>
           <p className="mt-4 text-md text-gray-500">No results found!</p>
         </div>
       )}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 mt-4">
+      <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-1 lg:grid-cols-2 mt-6">
         {currentItems.map((book) => {
           return (
             <Book
@@ -108,11 +111,16 @@ export const BooksContainer = ({ category = "All Genre", books }) => {
           )
         })}
       </div>
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={resultsBasedOnFilter.length}
-        paginate={paginate}
-      />
+      <div className="float-right mt-4">
+        <span className="text-sm text-gray-700">
+          Showing {resultsBasedOnFilter.length} Entries
+        </span>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={resultsBasedOnFilter.length}
+          paginate={paginate}
+        />
+      </div>
     </div>
   )
 }

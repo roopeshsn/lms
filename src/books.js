@@ -113,7 +113,7 @@ export const bookData = [
     author: "Ankur Warikoo",
     category: "Personal Development",
     to: "personal-development",
-    date: "2022-05-12",
+    date: "2022-12-12",
     src: "https://res.cloudinary.com/dtinnnjnt/image/upload/v1670775103/lms/books/get-epic-shit-done_feqlxl.webp",
   },
   {

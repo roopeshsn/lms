@@ -6,7 +6,7 @@ export const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
     pageNumbers.push(i)
   }
   return (
-    <nav className="mt-4 float-right" aria-label="Page navigation">
+    <nav className="mt-2" aria-label="Page navigation">
       <ul className="inline-flex -space-x-px">
         {pageNumbers.map((number) => (
           <li key={number}>
