@@ -5,6 +5,7 @@ export const Pagination = ({ itemsPerPage, totalItems, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i)
   }
+  console.log(pageNumbers)
   return (
     <nav className="mt-2" aria-label="Page navigation">
       <ul className="inline-flex -space-x-px">
